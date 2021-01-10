@@ -1,8 +1,8 @@
 <template>
-  <div class="Setting"></div>
+  <div class="setting"></div>
 </template>
 <style lang="less" scoped>
-.Setting {
+.setting {
   height: 200px;
   background: teal;
 }

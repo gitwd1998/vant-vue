@@ -5,42 +5,42 @@
             {
                 "title": "Button",
                 "value": "按钮",
-                "to": "/Button"
+                "to": "/button"
             },
             {
                 "title": "Cell",
                 "value": "单元格",
-                "to": "/Cell"
+                "to": "/cell"
             },
             {
                 "title": "Icon",
                 "value": "图标",
-                "to": "/Icon"
+                "to": "/icon"
             },
             {
                 "title": "Image",
                 "value": "图片",
-                "to": "/Image"
+                "to": "/image"
             },
             {
                 "title": "Layout",
                 "value": "布局",
-                "to": "/Layout"
+                "to": "/layout"
             },
             {
                 "title": "Popup",
                 "value": "弹出层",
-                "to": "/Popup"
+                "to": "/popup"
             },
             {
                 "title": "Style",
                 "value": "内置样式",
-                "to": "/Style"
+                "to": "/style"
             },
             {
                 "title": "Toast",
                 "value": "轻提示",
-                "to": "/Toast"
+                "to": "/toast"
             }
         ]
     },
@@ -50,82 +50,82 @@
             {
                 "title": "Calendar",
                 "value": "日历",
-                "to": "/Calendar"
+                "to": "/calendar"
             },
             {
                 "title": "Cascader",
                 "value": "级联选择",
-                "to": "/Cascader"
+                "to": "/cascader"
             },
             {
                 "title": "Checkbox",
                 "value": "复选框",
-                "to": "/Checkbox"
+                "to": "/checkbox"
             },
             {
                 "title": "DatetimePicker",
                 "value": "时间选择",
-                "to": "/DatetimePicker"
+                "to": "/datetimePicker"
             },
             {
                 "title": "Field",
                 "value": "输入框",
-                "to": "/Field"
+                "to": "/field"
             },
             {
                 "title": "Form",
                 "value": "表单",
-                "to": "/Form"
+                "to": "/form"
             },
             {
                 "title": "NumberKeyboard",
                 "value": "数字键盘",
-                "to": "/NumberKeyboard"
+                "to": "/numberKeyboard"
             },
             {
                 "title": "PasswordInput",
                 "value": "密码输入框",
-                "to": "/PasswordInput"
+                "to": "/passwordInput"
             },
             {
                 "title": "Picker",
                 "value": "选择器",
-                "to": "/Picker"
+                "to": "/picker"
             },
             {
                 "title": "Radio",
                 "value": "单选框",
-                "to": "/Radio"
+                "to": "/radio"
             },
             {
                 "title": "Rate",
                 "value": "评分",
-                "to": "/Rate"
+                "to": "/rate"
             },
             {
                 "title": "Search",
                 "value": "搜索",
-                "to": "/Search"
+                "to": "/search"
             },
             {
                 "title": "Slider",
                 "value": "滑块",
-                "to": "/Slider"
+                "to": "/slider"
             },
             {
                 "title": "Stepper",
                 "value": "步进器",
-                "to": "/Stepper"
+                "to": "/stepper"
             },
             {
                 "title": "Switch",
                 "value": "开关",
-                "to": "/Switch"
+                "to": "/switch"
             },
             {
                 "title": "Uploader",
                 "value": "文件上传",
-                "to": "/Uploader"
+                "to": "/uploader"
             }
         ]
     },
@@ -135,47 +135,47 @@
             {
                 "title": "ActionSheet",
                 "value": "动作面板",
-                "to": "/ActionSheet"
+                "to": "/actionSheet"
             },
             {
                 "title": "Dialog",
                 "value": "弹出框",
-                "to": "/Dialog"
+                "to": "/dialog"
             },
             {
                 "title": "DropdownMenu",
                 "value": "下拉菜单",
-                "to": "/DropdownMenu"
+                "to": "/dropdownMenu"
             },
             {
                 "title": "DatetimePicker",
                 "value": "加载",
-                "to": "/DatetimePicker"
+                "to": "/datetimePicker"
             },
             {
                 "title": "Notify",
                 "value": "消息通知",
-                "to": "/Notify"
+                "to": "/notify"
             },
             {
                 "title": "Overlay",
                 "value": "遮罩层",
-                "to": "/Overlay"
+                "to": "/overlay"
             },
             {
                 "title": "PullRefresh",
                 "value": "下拉刷新",
-                "to": "/PullRefresh"
+                "to": "/pullRefresh"
             },
             {
                 "title": "ShareSheet",
                 "value": "分享面板",
-                "to": "/ShareSheet"
+                "to": "/shareSheet"
             },
             {
                 "title": "SwipeCell",
                 "value": "滑动单元格",
-                "to": "/SwipeCell"
+                "to": "/swipeCell"
             }
         ]
     },
@@ -185,87 +185,87 @@
             {
                 "title": "Badge",
                 "value": "徽标",
-                "to": "/Badge"
+                "to": "/badge"
             },
             {
                 "title": "Circle",
                 "value": "环形进度条",
-                "to": "/Circle"
+                "to": "/circle"
             },
             {
                 "title": "Collapse",
                 "value": "折叠面板",
-                "to": "/Collapse"
+                "to": "/collapse"
             },
             {
                 "title": "CountDown",
                 "value": "倒计时",
-                "to": "/CountDown"
+                "to": "/countDown"
             },
             {
                 "title": "Divider",
                 "value": "分割线",
-                "to": "/Divider"
+                "to": "/divider"
             },
             {
                 "title": "Empty",
                 "value": "空状态",
-                "to": "/Empty"
+                "to": "/empty"
             },
             {
                 "title": "ImagePreview",
                 "value": "图片预览",
-                "to": "/ImagePreview"
+                "to": "/imagePreview"
             },
             {
                 "title": "Lazyload",
                 "value": "懒加载",
-                "to": "/Lazyload"
+                "to": "/lazyload"
             },
             {
                 "title": "List",
                 "value": "列表",
-                "to": "/List"
+                "to": "/list"
             },
             {
                 "title": "NoticeBar",
                 "value": "通知栏",
-                "to": "/NoticeBar"
+                "to": "/noticeBar"
             },
             {
                 "title": "Popover",
                 "value": "气泡弹出框",
-                "to": "/Popover"
+                "to": "/popover"
             },
             {
                 "title": "Progress",
                 "value": "进度条",
-                "to": "/Progress"
+                "to": "/progress"
             },
             {
                 "title": "Skeleton",
                 "value": "骨架屏",
-                "to": "/Skeleton"
+                "to": "/skeleton"
             },
             {
                 "title": "Steps",
                 "value": "步骤条",
-                "to": "/Steps"
+                "to": "/steps"
             },
             {
                 "title": "Sticky",
                 "value": "粘性布局",
-                "to": "/Sticky"
+                "to": "/sticky"
             },
             {
                 "title": "Swipe",
                 "value": "轮播",
-                "to": "/Swipe"
+                "to": "/swipe"
             },
             {
                 "title": "Tag",
                 "value": "标签",
-                "to": "/Tag"
+                "to": "/tag"
             }
         ]
     },
@@ -275,42 +275,42 @@
             {
                 "title": "Grid",
                 "value": "宫格",
-                "to": "/Grid"
+                "to": "/grid"
             },
             {
                 "title": "IndexBar",
                 "value": "索引栏",
-                "to": "/IndexBar"
+                "to": "/indexBar"
             },
             {
                 "title": "NavBar",
                 "value": "导航栏",
-                "to": "/NavBar"
+                "to": "/navBar"
             },
             {
                 "title": "Pagination",
                 "value": "分页",
-                "to": "/Pagination"
+                "to": "/pagination"
             },
             {
                 "title": "Sidebar",
                 "value": "侧边导航",
-                "to": "/Sidebar"
+                "to": "/sidebar"
             },
             {
                 "title": "Tab",
                 "value": "标签页",
-                "to": "/Tab"
+                "to": "/tab"
             },
             {
                 "title": "Tabbar",
                 "value": "标签栏",
-                "to": "/Tabbar"
+                "to": "/tabbar"
             },
             {
                 "title": "TreeSelect",
                 "value": "分类选择",
-                "to": "/TreeSelect"
+                "to": "/treeSelect"
             }
         ]
     },
@@ -320,57 +320,57 @@
             {
                 "title": "AddressEdit",
                 "value": "地址编辑",
-                "to": "/AddressEdit"
+                "to": "/addressEdit"
             },
             {
                 "title": "AddressList",
                 "value": "地址列表",
-                "to": "/AddressList"
+                "to": "/addressList"
             },
             {
                 "title": "Area",
                 "value": "省市区选择",
-                "to": "/Area"
+                "to": "/area"
             },
             {
                 "title": "Card",
                 "value": "商品卡片",
-                "to": "/Card"
+                "to": "/card"
             },
             {
                 "title": "ContactCard",
                 "value": "联系人卡片",
-                "to": "/ContactCard"
+                "to": "/contactCard"
             },
             {
                 "title": "ContactEdit",
                 "value": "联系人编辑",
-                "to": "/ContactEdit"
+                "to": "/contactEdit"
             },
             {
                 "title": "ContactList",
                 "value": "联系人列表",
-                "to": "/ContactList"
+                "to": "/contactList"
             },
             {
                 "title": "Coupon",
                 "value": "优惠券",
-                "to": "/Coupon"
+                "to": "/coupon"
             },
             {
                 "title": "GoodsAction",
                 "value": "商品导航",
-                "to": "/GoodsAction"
+                "to": "/goodsAction"
             },
             {
                 "title": "SubmitBar",
                 "value": "提交订单栏",
-                "to": "/SubmitBar"
+                "to": "/submitBar"
             },
             {
                 "title": "Sku",
                 "value": "商品规格",
-                "to": "/Sku"
+                "to": "/sku"
             }
         ]
     }

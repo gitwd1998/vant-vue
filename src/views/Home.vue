@@ -1,8 +1,8 @@
 <template>
-  <div class="Home"></div>
+  <div class="home"></div>
 </template>
 <style lang="less" scoped>
-.Home {
+.home {
   height: 200px;
   background: tomato;
 }

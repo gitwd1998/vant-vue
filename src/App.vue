@@ -20,13 +20,13 @@
     <!-- 底部导航 -->
     <van-tabbar v-model="activePage" placeholder route>
       <van-tabbar-item name="Home" icon="home-o" to="/" replace>
-        Home
+        HOME
       </van-tabbar-item>
-      <van-tabbar-item name="Friends" icon="friends-o" to="/Friends" replace>
-        Friends
+      <van-tabbar-item name="User" icon="user-o" to="/user" replace>
+        USER
       </van-tabbar-item>
-      <van-tabbar-item name="Setting" icon="setting-o" to="/Setting" replace>
-        Setting
+      <van-tabbar-item name="Setting" icon="setting-o" to="/setting" replace>
+        SETTING
       </van-tabbar-item>
     </van-tabbar>
     <!-- 右侧弹出层 -->
@@ -69,7 +69,7 @@ import {
   Collapse,
   CollapseItem,
 } from "vant";
-import popupContent from "./components.json";
+import popupContent from "./assets/components.json";
 export default {
   components: {
     vanNavBar: NavBar,

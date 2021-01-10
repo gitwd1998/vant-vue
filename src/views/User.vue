@@ -1,8 +1,8 @@
 <template>
-  <div class="Friends"></div>
+  <div class="user"></div>
 </template>
 <style lang="less" scoped>
-.Friends {
+.user {
   height: 200px;
   background: turquoise;
 }
