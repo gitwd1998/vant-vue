@@ -1,9 +1,13 @@
 <template>
-  <div class="setting"></div>
+  <div>
+    <van-img :src="require('../assets/img/3.jpg')" />
+  </div>
 </template>
-<style lang="less" scoped>
-.setting {
-  height: 200px;
-  background: teal;
-}
-</style>
+<script>
+import { Image } from "vant";
+export default {
+  components: {
+    vanImg: Image,
+  },
+};
+</script>
