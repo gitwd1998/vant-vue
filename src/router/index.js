@@ -22,7 +22,8 @@ const routes = [
   { path: '/cascader', component: () => import('@/components/form-component/Cascader') },
   { path: '/datetimePicker', component: () => import('@/components/form-component/DatetimePicker') },
   { path: '/uploader', component: () => import('@/components/form-component/Uploader') },
-  { path: '/actionSheet', component: () => import('@/components/feedback-component/ActionSheet') }
+  { path: '/actionSheet', component: () => import('@/components/feedback-component/ActionSheet') },
+  { path: '/popover', component: () => import('@/components/show-component/Popover') },
 ]
 
 const router = new VueRouter({
