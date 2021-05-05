@@ -21,10 +21,10 @@ export default {
     return {
       showPopover: false,
       actions: [
-        { text: "选项一" },
-        { text: "选项二" },
-        { text: "选项三" },
-        { text: "选项四" },
+        { text: "选项一", id: 1 },
+        { text: "选项二", id: 2 },
+        { text: "选项三", id: 3 },
+        { text: "选项四", id: 4 },
       ],
     };
   },
