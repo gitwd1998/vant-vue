@@ -1,7 +1,7 @@
 const url = require('url');
 const queryString = require('querystring');
 const path = require('path');
-
+const vConsolePlugin = require('vconsole-webpack-plugin')
 
 process.env.VUE_APP_VERSION = require('./package.json').version
 module.exports = {
@@ -44,10 +44,21 @@ module.exports = {
     // Webpack相关配置 Type: Object||Function
     // 如果这个值是一个对象，则会通过 webpack-merge 合并到最终的配置中。
     // 如果这个值是一个函数，则会接收被解析的配置作为参数。该函数及可以修改配置并不返回任何东西，也可以返回一个被克隆或合并过的配置版本。
-    configureWebpack: {
-        output: {
-            libraryExport: 'default'
-        }
+    // configureWebpack: {
+    //     output: {
+    //         libraryExport: 'default'
+    //     }
+    // },
+    configureWebpack: config => {
+        // 移动端调试控制台插件
+        const debug = process.env.NODE_ENV !== 'production'
+        let pluginsDev = [
+            new vConsolePlugin({
+                filter: [],
+                enable: debug
+            })
+        ]
+        config.plugins = [...config.plugins, ...pluginsDev]
     },
 
     // Webpack相关配置 Type: Function

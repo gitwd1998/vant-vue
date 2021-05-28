@@ -47,9 +47,9 @@ export function add(data) {
     })
 }
 // 删除
-export function detele(data) {
+export function deleteItem(data) {
     return request({
-        url: ROOT_API + '/detele',
+        url: ROOT_API + '/delete',
         method: 'post',
         data
     })
