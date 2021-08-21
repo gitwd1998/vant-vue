@@ -38,6 +38,16 @@
         >重置</van-button
       >
     </div>
+    <div class="van-cell">
+      <van-button
+        round
+        block
+        type="danger"
+        native-type="button"
+        @click="$router.go(-1)"
+        >取消</van-button
+      >
+    </div>
   </van-form>
 </template>
 <script>
