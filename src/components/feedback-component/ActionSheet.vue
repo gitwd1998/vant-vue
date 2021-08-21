@@ -1,5 +1,5 @@
 <template>
-  <div class="actionSheet">
+  <div class="msin-content">
     <van-cell is-link title="显示动作面板" @click="show = true" />
     <van-action-sheet
       v-model="show"

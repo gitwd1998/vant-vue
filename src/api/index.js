@@ -1,63 +1,113 @@
 import request from '@/utils/request'
-import { ROOT_API } from "@/utils/utils";
-// 验证码
+
+/**
+ * 获取用户信息
+ * @param {*} data 
+ * @returns 获取用户信息
+ */
+export function getUserInfo(data) {
+    return request({
+        method: 'post',
+        url: '/getUserInfo',
+        data,
+    })
+}
+
+/**
+ * 登陆的时候获取验证码
+ * @returns 获取验证码
+ */
 export function captcha() {
     return request({
-        url: ROOT_API + '/captcha',
+        url: '/captcha',
         method: 'post',
     })
 }
-// 登录
+
+/**
+ * 登录
+ * @param {*} data 
+ * @returns 登录
+ */
 export function login(data) {
     return request({
-        url: ROOT_API + '/login',
+        url: '/login',
         method: 'post',
         data
     })
 }
-// 注册
+
+/**
+ * 注册
+ * @param {*} data 
+ * @returns 注册
+ */
 export function regist(data) {
     return request({
-        url: ROOT_API + '/regist',
+        url: '/regist',
         method: 'post',
         data
     })
 }
-// 初始化列表
+
+/**
+ * 获取视图列表数据
+ * @returns 获取视图列表数据
+ */
 export function init() {
     return request({
-        url: ROOT_API + '/init',
+        url: '/init',
         method: 'post',
     })
 }
-// 查看详情
+
+/**
+ * 查看详情
+ * @param {*} data 
+ * @returns 查看详情
+ */
 export function detail(data) {
     return request({
-        url: ROOT_API + '/detail',
+        url: '/detail',
         method: 'post',
         data
     })
 }
-// 添加
+
+/**
+ * 添加
+ * @param {*} data 
+ * @returns 添加
+ */
 export function add(data) {
     return request({
-        url: ROOT_API + '/add',
+        url: '/add',
         method: 'post',
         data
     })
 }
-// 删除
+
+/**
+ * 删除
+ * @param {*} data 
+ * @returns 删除
+ */
 export function deleteItem(data) {
     return request({
-        url: ROOT_API + '/delete',
+        url: '/delete',
         method: 'post',
         data
     })
 }
-// 修改
+
+/**
+ * 修改
+ * @param {*} data 
+ * @returns 修改
+ */
 export function edit(data) {
     return request({
-        url: ROOT_API + '/edit',
+        url: '/edit',
         method: 'post',
         data
     })

@@ -1,5 +1,5 @@
 <template>
-  <div class="datetimePicker">
+  <div class="main-content">
     <van-datetime-picker
       v-model="currentDate"
       type="date"

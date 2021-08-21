@@ -1,5 +1,5 @@
 <template>
-  <div class="popover">
+  <div class="main-content">
     <van-popover
       v-model="showPopover"
       trigger="click"

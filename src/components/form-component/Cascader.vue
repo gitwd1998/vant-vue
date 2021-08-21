@@ -1,5 +1,5 @@
 <template>
-  <div class="cascader">
+  <div class="main-content">
     <van-field
       v-model="fieldValue"
       is-link

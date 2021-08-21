@@ -1,5 +1,5 @@
 <template>
-  <div class="uploader">
+  <div class="main-content">
     <van-uploader :after-read="afterRead" />
   </div>
 </template>

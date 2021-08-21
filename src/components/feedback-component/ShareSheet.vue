@@ -1,5 +1,5 @@
 <template>
-  <div class="shareSheet">
+  <div class="main-content">
     <van-cell title="显示分享面板" @click="show = true" is-link />
     <van-share-sheet
       v-model="show"
