@@ -5,13 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: localStorage.getItem("user"),
-    phone: localStorage.getItem("phone"),
-    head: localStorage.getItem("head"),
+    lang: localStorage.getItem('lang') || 'zh',
+    user: "",
+    phone: "",
+    head: "",
     token: localStorage.getItem("token"),
-    timestamp: localStorage.getItem("timestamp"),
   },
   getters: {
+    getLang(status) {
+      return status.lang
+    },
     getUser(status) {
       return status.user
     },
@@ -24,11 +27,11 @@ export default new Vuex.Store({
     getToken(status) {
       return status.token
     },
-    getTimestamp(status) {
-      return status.timestamp
-    },
   },
   mutations: {
+    setLang(status, lang) {
+      status.lang = lang
+    },
     setUser(status, user) {
       status.user = user
     },
@@ -40,9 +43,6 @@ export default new Vuex.Store({
     },
     setToken(status, token) {
       status.token = token
-    },
-    setTimestamp(status, timestamp) {
-      status.timestamp = timestamp
     },
   },
   actions: {

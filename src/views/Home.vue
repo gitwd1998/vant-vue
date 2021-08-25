@@ -1,5 +1,9 @@
 <template>
-  <div class="main-content"></div>
+  <div class="main-content">
+    {{ $t("lang.en") }}
+    <hr />
+    {{ $t("lang.zh") }}
+  </div>
 </template>
 <script>
 export default {

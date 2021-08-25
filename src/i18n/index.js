@@ -1,11 +1,11 @@
 import Vue from 'vue'
+import store from '../store'
 import VueI18n from 'vue-i18n'
 import en from './lang/en'
 import zh from './lang/zh'
-// import { Locale } from "vant";
 Vue.use(VueI18n)
 const i18n = new VueI18n({
-    locale: 'zh',
+    locale: store.getters.getLang,
     messages: { en, zh, }
 })
 

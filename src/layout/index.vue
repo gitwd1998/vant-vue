@@ -117,7 +117,8 @@ export default {
   position: relative;
   height: 100%;
   .main {
-    background: #fff;
+    background: url("../assets/img/logo.png") center top no-repeat;
+    background-size: 20%;
     position: absolute;
     overflow-x: hidden;
     left: 10px;
@@ -127,6 +128,7 @@ export default {
     .main-content {
       width: 100%;
       min-height: 100%;
+      background: #fff;
     }
     .page-enter {
       transform: translate(100px, 0);
