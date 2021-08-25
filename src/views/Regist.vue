@@ -62,6 +62,7 @@
 import { regist } from "@/api";
 import { Button, Field, Form, Toast } from "vant";
 export default {
+  name: "注册",
   components: {
     vanForm: Form,
     vanField: Field,

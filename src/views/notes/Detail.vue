@@ -49,6 +49,7 @@ import { Button, Field, Dialog, Toast, Form } from "vant";
 import { detail, deleteItem } from "@/api";
 import { dealTime } from "@/utils/tools";
 export default {
+  name: "日记详情",
   components: {
     vanForm: Form,
     vanFiled: Field,

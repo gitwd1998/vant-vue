@@ -30,6 +30,7 @@
 <script>
 import { Cell, CellGroup, Image, Dialog } from "vant";
 export default {
+  name: "基本信息",
   components: {
     vanCellGroup: CellGroup,
     vanCell: Cell,

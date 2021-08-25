@@ -11,6 +11,7 @@
 <script>
 import { Button } from "vant";
 export default {
+  name: "按钮",
   components: { vanButton: Button },
 };
 </script>

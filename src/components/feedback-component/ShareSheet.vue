@@ -12,6 +12,7 @@
 <script>
 import { Cell, ShareSheet, Toast } from "vant";
 export default {
+  name: "分享面板",
   components: {
     vanCell: Cell,
     vanShareSheet: ShareSheet,

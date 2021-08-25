@@ -100,6 +100,7 @@ import {
   Dialog,
 } from "vant";
 export default {
+  name: "日记列表",
   components: {
     vanGrid: Grid,
     vanGridItem: GridItem,

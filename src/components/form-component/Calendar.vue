@@ -7,6 +7,7 @@
 <script>
 import { Cell, Calendar } from "vant";
 export default {
+  name: "日历",
   components: { vanCell: Cell, vanCalendar: Calendar },
   data() {
     return {

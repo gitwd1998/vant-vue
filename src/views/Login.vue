@@ -66,6 +66,7 @@
 import { captcha, login, getUserInfo } from "@/api";
 import { Button, Field, Form, Toast } from "vant";
 export default {
+  name: "登录",
   components: {
     vanForm: Form,
     vanField: Field,

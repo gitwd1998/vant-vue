@@ -6,6 +6,7 @@
 <script>
 import { Uploader } from "vant";
 export default {
+  name: "文件上传",
   components: { vanUploader: Uploader },
   methods: {
     afterRead(file) {

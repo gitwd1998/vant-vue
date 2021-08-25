@@ -48,10 +48,11 @@
 </template>
 <script>
 import { Tab, Tabs } from "vant";
-import Grid from "./Grid.vue";
+import GridComponent from "./Grid.vue";
 export default {
+  name: "标签页",
   components: {
-    gridComponent: Grid,
+    gridComponent: GridComponent,
     vanTabs: Tabs,
     vanTab: Tab,
   },

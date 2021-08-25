@@ -3,6 +3,7 @@
 </template>
 <script>
 export default {
+  name: "首页",
   mounted() {
     // const ws = new WebSocket("ws://127.0.0.1:9000");
     // ws.onopen = (e) => {

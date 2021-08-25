@@ -16,6 +16,7 @@
 <script>
 import { Button, Popover } from "vant";
 export default {
+  name: "气泡弹出框",
   components: { vanButton: Button, vanPopover: Popover },
   data() {
     return {

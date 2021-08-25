@@ -22,6 +22,7 @@
 <script>
 import { Cascader, Field, Popup } from "vant";
 export default {
+  name: "级联选择",
   components: { vanCascader: Cascader, vanField: Field, vanPopup: Popup },
   data() {
     return {
