@@ -1,10 +1,46 @@
 <template>
-  <van-skeleton title :row="10" :loading="isLoading">
-    <div>
+  <div class="">
+    <van-sticky>
+      <van-button
+        key="edit"
+        size="small"
+        :icon="isSelect ? 'close' : 'edit'"
+        @click="isSelect = !isSelect"
+      />
+      <van-button
+        key="add"
+        size="small"
+        icon="add-o"
+        @click="$router.push({ path: '/notes/add' })"
+      />
+      <van-button
+        key="select"
+        size="small"
+        :icon="isAllSelected ? 'certificate' : 'circle'"
+        v-if="isSelect"
+        @click="selectAll"
+      />
+      <van-button
+        key="delete"
+        size="small"
+        icon="delete-o"
+        v-if="isSelect && selectedArr.length"
+        @click="batchDelete"
+      />
+      <van-button
+        key="view"
+        :icon="isList ? 'orders-o' : 'apps-o'"
+        size="small"
+        @click="isList = !isList"
+      />
+      <van-button key="sequence" icon="descending" size="small" />
+      <van-button key="uploade" icon="back-top" size="small" />
+      <van-button key="download" icon="down" size="small" />
+    </van-sticky>
+    <van-skeleton title :row="10" :loading="isLoading">
       <van-cell-group v-if="isList">
-        <van-cell icon="ellipsis" title is-link @click="showMore = true" />
         <van-cell
-          v-for="item in lists"
+          v-for="item in noteList"
           :key="item.id"
           :title="item.title"
           icon="notes-o"
@@ -28,9 +64,8 @@
         :clickable="!isSelect"
         square
       >
-        <van-grid-item icon="ellipsis" @click="showMore = true" />
         <van-grid-item
-          v-for="item in lists"
+          v-for="item in noteList"
           :key="item.id"
           @click="isSelect ? handleSelect(item) : toDetail(item)"
         >
@@ -46,42 +81,23 @@
           </template>
         </van-grid-item>
       </van-grid>
-      <van-popup
-        round
-        close-on-popstate
-        close-on-click-overlay
-        v-model="showMore"
-        position="left"
-      >
-        <van-cell-group>
-          <van-cell icon="close" @click="showMore = false" />
-          <van-cell icon="add-o" to="/notes/add" />
-          <van-cell
-            icon="orders-o"
-            @click="(isList = true), (showMore = false)"
-          />
-          <van-cell icon="apps-o" @click="showMore = isList = false" />
-          <van-cell
-            icon="more-o"
-            @click="(isSelect = true), (showMore = false)"
-          />
-        </van-cell-group>
-      </van-popup>
-    </div>
-  </van-skeleton>
+    </van-skeleton>
+  </div>
 </template>
 <script>
-import { init } from "@/api";
+import { init, batchDelete } from "@/api";
 import { dealTime } from "@/utils/tools";
 import {
+  Button,
   Cell,
   CellGroup,
   Grid,
   GridItem,
   Icon,
-  Popup,
   Skeleton,
+  Sticky,
   Toast,
+  Dialog,
 } from "vant";
 export default {
   components: {
@@ -90,20 +106,25 @@ export default {
     vanSkeleton: Skeleton,
     vanCellGroup: CellGroup,
     vanCell: Cell,
-    vanPopup: Popup,
     vanIcon: Icon,
+    vanButton: Button,
+    vanSticky: Sticky,
   },
   data() {
     return {
       isList: false,
       isLoading: true,
       showMore: false,
-      lists: [],
+      noteList: [],
       isSelect: false,
       selectedArr: [],
     };
   },
-  computed: {},
+  computed: {
+    isAllSelected() {
+      return this.noteList.length === this.selectedArr.length;
+    },
+  },
   created() {
     this.onInit();
   },
@@ -114,7 +135,7 @@ export default {
       this.isLoading = false;
       if (data.code === "0") {
         Toast(data.msg);
-        this.lists = data.data;
+        this.noteList = data.data;
       } else {
         Toast("获取数据失败");
       }
@@ -127,6 +148,40 @@ export default {
       if (index < 0) return this.selectedArr.push(item.id);
       this.selectedArr.splice(index, 1);
     },
+    selectAll() {
+      this.selectedArr = this.isAllSelected
+        ? []
+        : this.noteList.map((v) => v.id);
+    },
+    batchDelete() {
+      Dialog.confirm({
+        title: "提示信息",
+        message: "确定要删除这些日记吗？",
+      })
+        .then(async () => {
+          const { data } = await batchDelete({ ids: this.selectedArr });
+          if (data.code === "0") {
+            Toast(data.msg);
+            this.onInit();
+          } else {
+            Toast("删除失败");
+          }
+        })
+        .catch(() => {
+          Toast("取消删除");
+        });
+    },
   },
 };
 </script>
+<style lang="less" scoped>
+/deep/.van-sticky {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  &.van-sticky--fixed {
+    top: 46px;
+  }
+}
+</style>

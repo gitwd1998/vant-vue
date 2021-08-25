@@ -82,13 +82,16 @@ export default {
           const { data } = await deleteItem({ id: this.id });
           if (data.code === "0") {
             this.$router.replace({ path: "/notes/lists" });
-            Toast("删除成功!");
+            Toast({
+              message: "data.msg",
+              duration: 1000,
+            });
           } else {
             Toast("删除失败");
           }
         })
         .catch(() => {
-          Toast("取消删除!");
+          Toast("取消删除");
         });
     },
   },
