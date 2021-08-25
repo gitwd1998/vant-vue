@@ -18,18 +18,30 @@ const routes = [
           { path: '/notes/edit', component: () => import('@/views/notes/Edit') },
         ]
       },
-      { path: '/setting', component: () => import('@/views/Setting') },
+      {
+        path: '/setting', component: () => import('@/views/setting'), redirect: '/setting/info', children: [
+          { path: '/setting/info', component: () => import('@/views/setting/Info') },
+          { path: '/setting/changePassword', component: () => import('@/views/setting/ChangePassword') },
+          { path: '/setting/changePortrait', component: () => import('@/views/setting/ChangePortrait') },
+        ]
+      },
+      // 基础组件
       { path: '/button', component: () => import('@/components/base-component/Button') },
+      // 表单组件
       { path: '/calendar', component: () => import('@/components/form-component/Calendar') },
-      { path: '/shareSheet', component: () => import('@/components/feedback-component/ShareSheet') },
-      // 导航组件
-      { path: '/grid', component: () => import('@/components/nav-component/Grid') },
-      { path: '/tab', component: () => import('@/components/nav-component/Tab') },
       { path: '/cascader', component: () => import('@/components/form-component/Cascader') },
       { path: '/datetimePicker', component: () => import('@/components/form-component/DatetimePicker') },
       { path: '/uploader', component: () => import('@/components/form-component/Uploader') },
+      // 反馈组件
       { path: '/actionSheet', component: () => import('@/components/feedback-component/ActionSheet') },
+      { path: '/shareSheet', component: () => import('@/components/feedback-component/ShareSheet') },
+      // 展示组件
       { path: '/popover', component: () => import('@/components/show-component/Popover') },
+      // 导航组件
+      { path: '/grid', component: () => import('@/components/nav-component/Grid') },
+      { path: '/tab', component: () => import('@/components/nav-component/Tab') },
+      // 业务组件
+
     ]
   },
 ]
