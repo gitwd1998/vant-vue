@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     user: localStorage.getItem("user"),
     phone: localStorage.getItem("phone"),
+    head: localStorage.getItem("head"),
     token: localStorage.getItem("token"),
     timestamp: localStorage.getItem("timestamp"),
   },
@@ -16,6 +17,9 @@ export default new Vuex.Store({
     },
     getPhone(status) {
       return status.phone
+    },
+    getHead(status) {
+      return status.head
     },
     getToken(status) {
       return status.token
@@ -30,6 +34,9 @@ export default new Vuex.Store({
     },
     setPhone(status, phone) {
       status.phone = phone
+    },
+    setHead(status, head) {
+      status.head = head
     },
     setToken(status, token) {
       status.token = token

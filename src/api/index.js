@@ -101,6 +101,19 @@ export function deleteItem(data) {
 }
 
 /**
+ * 批量删除
+ * @param {*} data 
+ * @returns 批量删除
+ */
+export function batchDelete(data) {
+    return request({
+        method: 'post',
+        url: '/delete/batch',
+        data
+    })
+}
+
+/**
  * 修改
  * @param {*} data 
  * @returns 修改
@@ -110,5 +123,19 @@ export function edit(data) {
         url: '/edit',
         method: 'post',
         data
+    })
+}
+
+/**
+ * 
+ * @param {*} data 
+ * @returns 上传头像
+ */
+export function uploadHead(data) {
+    return request({
+        url: '/upload/head',
+        method: 'post',
+        headers: { 'Content-Type': 'multipart/form-data' },
+        data,
     })
 }

@@ -16,6 +16,7 @@ export default {
       if (data.code === "0") {
         this.$store.commit("setUser", data.data.user);
         this.$store.commit("setPhone", data.data.phone);
+        this.$store.commit("setHead", data.data.head);
       } else {
         this.$router.replace({ path: "/login" });
       }
