@@ -18,13 +18,13 @@
     <!-- 自定义内容栅格 -->
     <van-grid :border="false" :column-num="3">
       <van-grid-item>
-        <van-image :src="require('../../assets/img/1.jpg')" />
+        <van-image :src="require('../../assets/img/logo.png')" />
       </van-grid-item>
       <van-grid-item>
-        <van-image :src="require('../../assets/img/2.jpg')" />
+        <van-image :src="require('../../assets/img/logo.png')" />
       </van-grid-item>
       <van-grid-item>
-        <van-image :src="require('../../assets/img/3.jpg')" />
+        <van-image :src="require('../../assets/img/logo.png')" />
       </van-grid-item>
     </van-grid>
     <!-- 正方形栅格 -->
