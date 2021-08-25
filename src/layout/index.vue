@@ -115,12 +115,11 @@ export default {
 <style lang="less">
 .layout {
   position: relative;
-  overflow: hidden;
   height: 100%;
   .main {
     background: #fff;
     position: absolute;
-    overflow: scroll;
+    overflow-x: hidden;
     left: 10px;
     right: 10px;
     top: 56px;
