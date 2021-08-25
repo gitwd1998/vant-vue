@@ -82,7 +82,6 @@ import {
 } from "vant";
 import popupContent from "@/assets/components.json";
 export default {
-  name: "框架",
   components: {
     vanNavBar: NavBar,
     vanTabbar: Tabbar,

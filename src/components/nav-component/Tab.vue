@@ -50,7 +50,6 @@
 import { Tab, Tabs } from "vant";
 import GridComponent from "./Grid.vue";
 export default {
-  name: "标签页",
   components: {
     gridComponent: GridComponent,
     vanTabs: Tabs,

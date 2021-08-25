@@ -56,7 +56,6 @@
 <script>
 import { Grid, GridItem, Image } from "vant";
 export default {
-  name: "宫格",
   components: { vanGrid: Grid, vanGridItem: GridItem, vanImage: Image },
 };
 </script>

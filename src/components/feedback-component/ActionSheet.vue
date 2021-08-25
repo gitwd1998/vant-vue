@@ -15,7 +15,6 @@
 <script>
 import { ActionSheet, Cell, Toast } from "vant";
 export default {
-  name: "动作面板",
   components: {
     vanActionSheet: ActionSheet,
     vanCell: Cell,

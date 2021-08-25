@@ -7,7 +7,6 @@
 import { uploadHead } from "@/api";
 import { Button, Uploader, Toast } from "vant";
 export default {
-  name: "修改头像",
   components: {
     vanUploader: Uploader,
     vanButton: Button,

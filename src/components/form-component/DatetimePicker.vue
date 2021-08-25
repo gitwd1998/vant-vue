@@ -12,7 +12,6 @@
 <script>
 import { DatetimePicker } from "vant";
 export default {
-  name: "时间选择",
   components: { vanDatetimePicker: DatetimePicker },
   data() {
     return {

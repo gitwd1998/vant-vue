@@ -54,7 +54,6 @@
 import { Button, Field, Form, Toast } from "vant";
 import { add } from "@/api";
 export default {
-  name: "添加日记",
   components: {
     vanForm: Form,
     vanFiled: Field,
