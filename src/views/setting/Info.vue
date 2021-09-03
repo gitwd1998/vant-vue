@@ -25,6 +25,7 @@
     />
     <van-cell title="退出登录" is-link @click="onExit" />
     <div>{{ head }}</div>
+    <img style="width: 100px" :src="head" alt="" />
   </van-cell-group>
 </template>
 <script>

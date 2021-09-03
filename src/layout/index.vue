@@ -15,9 +15,9 @@
     </van-nav-bar>
     <!-- 主题内容 -->
     <div class="main">
-      <transition name="page">
-        <router-view />
-      </transition>
+      <!-- <transition name="page"> -->
+      <router-view />
+      <!-- </transition> -->
     </div>
     <!-- 底部导航 -->
     <van-tabbar placeholder route>
@@ -130,26 +130,26 @@ export default {
       min-height: 100%;
       background: #fff;
     }
-    .page-enter {
-      transform: translate(100px, 0);
-      opacity: 0;
-    }
-    .page-enter-active {
-      transition: all 0.5s;
-    }
-    .page-enter-to {
-      opacity: 1;
-    }
-    .page-leave {
-      opacity: 1;
-    }
-    .page-leave-active {
-      transition: all 0.5s;
-    }
-    .page-leave-to {
-      transform: translate(-100px, 0);
-      opacity: 0;
-    }
+    // .page-enter {
+    //   transform: translate(100px, 0);
+    //   opacity: 0;
+    // }
+    // .page-enter-active {
+    //   transition: all 0.5s;
+    // }
+    // .page-enter-to {
+    //   opacity: 1;
+    // }
+    // .page-leave {
+    //   opacity: 1;
+    // }
+    // .page-leave-active {
+    //   transition: all 0.5s;
+    // }
+    // .page-leave-to {
+    //   transform: translate(-100px, 0);
+    //   opacity: 0;
+    // }
   }
 }
 </style>

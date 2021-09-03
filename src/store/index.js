@@ -5,44 +5,44 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    token: localStorage.getItem("token"),
     lang: localStorage.getItem('lang') || 'zh',
     user: "",
     phone: "",
     head: "",
-    token: localStorage.getItem("token"),
   },
   getters: {
-    getLang(status) {
-      return status.lang
+    getLang(state) {
+      return state.lang
     },
-    getUser(status) {
-      return status.user
+    getUser(state) {
+      return state.user
     },
-    getPhone(status) {
-      return status.phone
+    getPhone(state) {
+      return state.phone
     },
-    getHead(status) {
-      return status.head
+    getHead(state) {
+      return state.head
     },
-    getToken(status) {
-      return status.token
+    getToken(state) {
+      return state.token
     },
   },
   mutations: {
-    setLang(status, lang) {
-      status.lang = lang
+    setLang(state, lang) {
+      state.lang = lang
     },
-    setUser(status, user) {
-      status.user = user
+    setUser(state, user) {
+      state.user = user
     },
-    setPhone(status, phone) {
-      status.phone = phone
+    setPhone(state, phone) {
+      state.phone = phone
     },
-    setHead(status, head) {
-      status.head = head
+    setHead(state, head) {
+      state.head = head
     },
-    setToken(status, token) {
-      status.token = token
+    setToken(state, token) {
+      state.token = token
     },
   },
   actions: {
