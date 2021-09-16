@@ -11,21 +11,21 @@
     >
       <van-field
         v-model.trim="form.username"
-        name="user"
+        name="username"
         label="用户名"
         placeholder="请输入用户名"
         :rules="[{ pattern: rules.checkUsername, message: '请输入合法用户名' }]"
       />
       <van-field
         v-model="form.phone"
-        name="phone"
+        name="phonenumber"
         label="手机号"
         placeholder="请输入手机号"
         :rules="[{ pattern: rules.checkPhone, message: '请输入合法手机号' }]"
       />
       <van-field
         v-model="form.password"
-        name="pass"
+        name="password"
         label="密码"
         placeholder="请输入密码"
         :rules="[{ pattern: rules.checkPassword, message: '请输入合法密码' }]"
@@ -88,7 +88,7 @@ export default {
         message: "等待...",
         forbidClick: true,
       });
-      const { data } = await regist(form);
+      const data = await regist(form);
       Toast.clear();
       if (data.code === "0") {
         Toast({
@@ -101,12 +101,12 @@ export default {
       } else {
         Toast(data.msg);
         this.$refs.form.resetValidation();
-        this.form = { username: "", phone: "", password: "" };
+        this.form = { username: "", phonenumber: "", password: "" };
       }
     },
     onReset() {
       this.$refs.form.resetValidation();
-      this.form = { username: "", phone: "", password: "" };
+      this.form = { username: "", phonenumber: "", password: "" };
     },
     onFailed(rules) {
       for (const rule of rules.errors) {

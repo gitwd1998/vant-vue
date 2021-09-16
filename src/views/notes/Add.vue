@@ -72,7 +72,7 @@ export default {
       }
     },
     async onSubmit(form) {
-      let { data } = await add({ ...form, time: new Date().getTime() });
+      let data = await add({ ...form, time: new Date().getTime() });
       if (data.code === "0") {
         Toast.success({
           message: data.msg,

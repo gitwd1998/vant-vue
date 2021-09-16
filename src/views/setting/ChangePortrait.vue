@@ -18,7 +18,7 @@ export default {
       let { data } = await uploadHead(formData);
       console.log(data);
       if (data.code === "0") {
-        this.$store.commit("setHead", data.data.url);
+        this.$store.commit("setAvatar", data.data.url);
         Toast({
           message: data.msg,
           duration: 1000,

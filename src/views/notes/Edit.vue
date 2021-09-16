@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     async getDetial() {
-      let { data } = await detail({ id: this.id });
+      let data = await detail({ id: this.id });
       if (data.code === "0") {
         this.note = data.data;
         console.log(this.note);
@@ -85,7 +85,7 @@ export default {
       }
     },
     async onSubmit() {
-      let { data } = await edit({ ...this.note });
+      let data = await edit({ ...this.note });
       if (data.code === "0") {
         Toast({
           message: data.msg,

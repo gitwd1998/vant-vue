@@ -11,14 +11,14 @@
     >
       <van-field
         v-model="form.username"
-        name="user"
+        name="username"
         label="用户名"
         placeholder="请输入用户名"
         :rules="[{ pattern: rules.checkUsername, message: '请输入用户名' }]"
       />
       <van-field
         v-model="form.password"
-        name="pass"
+        name="password"
         label="密码"
         placeholder="请输入密码"
         :rules="[{ pattern: rules.checkPassword, message: '请输入密码' }]"
@@ -63,7 +63,7 @@
   </div>
 </template>
 <script>
-import { captcha, login, getUserInfo } from "@/api";
+import { captcha, login } from "@/api";
 import { Button, Field, Form, Toast } from "vant";
 export default {
   components: {
@@ -90,19 +90,22 @@ export default {
   },
   methods: {
     async getCaptcha() {
-      const { data } = await captcha();
-      this.captchaImg = data;
+      const data = await captcha();
+      if (data.code === "0") {
+        this.captchaImg = data.data;
+      } else {
+        Toast("获取验证码失败");
+      }
     },
     async onLogin(form) {
       Toast.loading({
         message: "等待...",
         forbidClick: true,
       });
-      const { data } = await login(form);
+      const data = await login(form);
       Toast.clear();
       if (data.code === "0") {
-        localStorage.setItem("token", data.data.token);
-        this.$store.commit("setToken", data.data.token);
+        localStorage.setItem("token", data.data);
         Toast({
           message: data.msg,
           duration: 1000,
@@ -110,16 +113,8 @@ export default {
         setTimeout(() => {
           this.$router.replace({ path: "/layout" });
         }, 1000);
-        getUserInfo({ token: data.data.token }).then((res) => {
-          if (res.data.code === "0") {
-            this.$store.commit("setUser", res.data.data.user);
-            this.$store.commit("setPhone", res.data.data.phone);
-          } else {
-            Toast(res.data.msg);
-          }
-        });
       } else {
-        Toast(data.msg);
+        Toast(data.msg || data.message);
         this.$refs.form.resetValidation();
         this.form = { username: "", password: "", captchatext: "" };
         this.getCaptcha();

@@ -17,15 +17,15 @@
       </template>
     </van-cell>
     <van-cell title="用户名" :value="username" icon="user-o" />
-    <van-cell title="手机号码" :value="phone" icon="phone-o" />
+    <van-cell title="手机号码" :value="phonenumber" icon="phone-o" />
     <van-cell
       title="修改密码"
       is-link
       @click="$router.push({ path: '/setting/changePassword' })"
     />
     <van-cell title="退出登录" is-link @click="onExit" />
-    <div>{{ head }}</div>
-    <img style="width: 100px" :src="head" alt="" />
+    <div>{{ avatar }}</div>
+    <img style="width: 100px" :src="avatar" alt="" />
   </van-cell-group>
 </template>
 <script>
@@ -41,13 +41,13 @@ export default {
   },
   computed: {
     username() {
-      return this.$store.getters.getUser;
+      return this.$store.getters.getUserName;
     },
-    phone() {
-      return this.$store.getters.getPhone;
+    phonenumber() {
+      return this.$store.getters.getPhoneNumber;
     },
-    head() {
-      return this.$store.getters.getHead;
+    avatar() {
+      return this.$store.getters.getAvatar;
     },
   },
   methods: {
@@ -57,7 +57,7 @@ export default {
         message: "确定要退出登录吗？",
       })
         .then(() => {
-          localStorage.clear();
+          localStorage.removeItem("token");
           this.$router.replace({ path: "/login" });
         })
         .catch(() => {});

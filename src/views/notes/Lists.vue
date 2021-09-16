@@ -38,7 +38,7 @@
       <van-button key="download" icon="down" size="small" />
     </van-sticky>
     <van-skeleton title :row="10" :loading="isLoading">
-      <van-cell-group v-if="isList">
+      <van-cell-group v-if="isList && noteList.length">
         <van-cell
           v-for="item in noteList"
           :key="item.id"
@@ -58,7 +58,7 @@
         </van-cell>
       </van-cell-group>
       <van-grid
-        v-else
+        v-else-if="noteList.length"
         :gutter="10"
         :column-num="3"
         :clickable="!isSelect"
@@ -81,6 +81,7 @@
           </template>
         </van-grid-item>
       </van-grid>
+      <van-empty v-else description="暂无数据" />
     </van-skeleton>
   </div>
 </template>
@@ -98,6 +99,7 @@ import {
   Sticky,
   Toast,
   Dialog,
+  Empty,
 } from "vant";
 export default {
   components: {
@@ -109,6 +111,7 @@ export default {
     vanIcon: Icon,
     vanButton: Button,
     vanSticky: Sticky,
+    vanEmpty: Empty,
   },
   data() {
     return {
@@ -131,7 +134,7 @@ export default {
   methods: {
     dealTime,
     async onInit() {
-      let { data } = await init();
+      let data = await init();
       this.isLoading = false;
       if (data.code === "0") {
         Toast(data.msg);
@@ -159,7 +162,7 @@ export default {
         message: "确定要删除这些日记吗？",
       })
         .then(async () => {
-          const { data } = await batchDelete({ ids: this.selectedArr });
+          const data = await batchDelete({ ids: this.selectedArr });
           if (data.code === "0") {
             Toast(data.msg);
             this.onInit();

@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     async handleInit() {
-      let { data } = await detail({ id: this.id });
+      let data = await detail({ id: this.id });
       if (data.code === "0") {
         this.note = data.data;
         this.note.time = dealTime(data.data.time);
@@ -79,7 +79,7 @@ export default {
         message: "确定要删除当前日记吗？",
       })
         .then(async () => {
-          const { data } = await deleteItem({ id: this.id });
+          const data = await deleteItem({ id: this.id });
           if (data.code === "0") {
             this.$router.replace({ path: "/notes/lists" });
             Toast({

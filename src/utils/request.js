@@ -3,62 +3,35 @@ import axios from 'axios'
 console.warn(process.env)
 import { Toast } from 'vant';
 import router from '../router'
-
+import store from '../store'
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BAES_URL,
   timeout: 3000,
+  headers: { 'Authorization': store.getters.getToken || '' },
 })
+
+// 接口白名单不需要校验token的api
+const apiwhitelist = ['/captcha', '/login', '/regist']
 
 // request interceptor(请求拦截器)
 service.interceptors.request.use(request => {
-  request.headers['Authorization'] = localStorage.getItem('token')
   const { url, headers } = request
-  var urlArr = ['/captcha', '/login', '/regist']
-  if (urlArr.includes(url)) return Promise.resolve(request)
+  if (apiwhitelist.includes(url)) return Promise.resolve(request)
   const token = headers.Authorization
-  if (!token) {
-    Toast({
-      message: "获取token失败!",
-      duration: 1000,
-    })
-    setTimeout(() => {
-      router.replace({ path: '/login' })
-    }, 1000);
-  }
-  return Promise.resolve(request)
+  if (token) return Promise.resolve(request)
+  Toast('获取token失败')
+  router.replace({ path: '/login' })
 }, error => {
-  Toast('请求异常!')
-  console.error('request-err：', error)
+  console.error('request-error：', error)
   Promise.reject(error)
 })
 
 // respone interceptor(应答拦截器)
 service.interceptors.response.use(response => {
-  const { data } = response
-  if (data.code === '401') {
-    Toast({
-      message: data.msg,
-      duration: 1000,
-    })
-    setTimeout(() => {
-      router.replace({ path: '/login' })
-    }, 1000)
-  }
-  if (data.name === "TokenExpiredError") {
-    Toast({
-      message: "token已过期! 请重新登录",
-      duration: 1000,
-    })
-    localStorage.clear();
-    setTimeout(() => {
-      router.replace({ path: "/login" })
-    }, 1000);
-  }
-  return Promise.resolve(response);
+  return Promise.resolve(response.data);
 }, error => {
-  Toast('接口异常!')
-  console.error('response-err：', error)
+  console.error('response-error：', error)
   Promise.reject(error)
 })
 
