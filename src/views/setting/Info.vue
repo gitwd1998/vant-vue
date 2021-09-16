@@ -58,6 +58,7 @@ export default {
       })
         .then(() => {
           localStorage.removeItem("token");
+          this.$store.commit("setToken", "");
           this.$router.replace({ path: "/login" });
         })
         .catch(() => {});

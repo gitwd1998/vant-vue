@@ -21,6 +21,7 @@ export default {
       } else {
         Toast(data.msg || `${data.name}: ${data.message}`);
         localStorage.removeItem("token");
+        this.$store.commit("setToken", "");
         this.$router.replace({ path: "/login" });
       }
     } else {
