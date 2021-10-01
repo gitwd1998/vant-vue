@@ -44,6 +44,12 @@ export default new Vuex.Store({
     setToken(state, token) {
       state.token = token
     },
+    logout(state) {
+      state.token = ""
+      state.username = ""
+      state.phonenumber = ""
+      state.avatar = ""
+    }
   },
   actions: {
   },
