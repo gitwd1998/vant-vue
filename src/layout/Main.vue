@@ -2,7 +2,7 @@
   <div class="layout">
     <!-- 顶部导航 -->
     <van-nav-bar
-      :title="$route.path.substr(1)"
+      :title="$route.name"
       placeholder
       border
       safe-area-inset-top
@@ -13,11 +13,9 @@
     >
       <template #right><van-icon name="apps-o" /></template>
     </van-nav-bar>
-    <!-- 主题内容 -->
+    <!-- 主体内容 -->
     <div class="main">
-      <!-- <transition name="page"> -->
       <router-view />
-      <!-- </transition> -->
     </div>
     <!-- 底部导航 -->
     <van-tabbar placeholder route>
@@ -59,7 +57,6 @@
             :title="item.title"
             :value="item.value"
             :to="item.to"
-            replace
             @click="showPopup = false"
             is-link
           />
@@ -68,6 +65,7 @@
     </van-popup>
   </div>
 </template>
+
 <script>
 import {
   NavBar,
@@ -101,10 +99,6 @@ export default {
       isAccordion: false,
     };
   },
-  created() {
-    // 测试机型
-    console.log(window.navigator);
-  },
   methods: {
     onSwitch(isAccordion) {
       this.activeCollapse = isAccordion ? "" : [];
@@ -112,44 +106,9 @@ export default {
   },
 };
 </script>
-<style lang="less">
-.layout {
-  position: relative;
-  height: 100%;
-  .main {
-    background: url("../assets/img/logo.png") center top no-repeat;
-    background-size: 20%;
-    position: absolute;
-    overflow-x: hidden;
-    left: 10px;
-    right: 10px;
-    top: 56px;
-    bottom: 60px;
-    .main-content {
-      width: 100%;
-      min-height: 100%;
-      background: #fff;
-    }
-    // .page-enter {
-    //   transform: translate(100px, 0);
-    //   opacity: 0;
-    // }
-    // .page-enter-active {
-    //   transition: all 0.5s;
-    // }
-    // .page-enter-to {
-    //   opacity: 1;
-    // }
-    // .page-leave {
-    //   opacity: 1;
-    // }
-    // .page-leave-active {
-    //   transition: all 0.5s;
-    // }
-    // .page-leave-to {
-    //   transform: translate(-100px, 0);
-    //   opacity: 0;
-    // }
-  }
+
+<style lang="less" scoped>
+.main {
+  height: calc(100% - 46px - 50px);
 }
 </style>

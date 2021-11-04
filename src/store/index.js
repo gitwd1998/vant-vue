@@ -10,6 +10,7 @@ export default new Vuex.Store({
     username: "",
     phonenumber: "",
     avatar: "",
+    turn: "",
   },
   getters: {
     getLang(state) {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     getToken(state) {
       return state.token
     },
+    getTurn(state) {
+      return state.turn
+    }
   },
   mutations: {
     setLang(state, lang) {
@@ -49,6 +53,9 @@ export default new Vuex.Store({
       state.username = ""
       state.phonenumber = ""
       state.avatar = ""
+    },
+    setTurn(state, turn) {
+      state.turn = turn
     }
   },
   actions: {

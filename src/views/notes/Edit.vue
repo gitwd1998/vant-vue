@@ -26,10 +26,18 @@
       :rules="[{ required: true, message: '请填写内容' }]"
     ></van-filed>
     <div class="van-cell">
-      <van-button round block type="info" native-type="submit">提交</van-button>
+      <van-button
+        :disabled="disabledBtn"
+        round
+        block
+        type="info"
+        native-type="submit"
+        >提交</van-button
+      >
     </div>
     <div class="van-cell">
       <van-button
+        :disabled="disabledBtn"
         round
         block
         type="warning"
@@ -40,6 +48,7 @@
     </div>
     <div class="van-cell">
       <van-button
+        :disabled="disabledBtn"
         round
         block
         type="danger"
@@ -63,6 +72,7 @@ export default {
     return {
       id: this.$route.query.id,
       note: {},
+      disabledBtn: false,
     };
   },
   created() {
@@ -85,6 +95,7 @@ export default {
       }
     },
     async onSubmit() {
+      this.disabledBtn = true;
       let data = await edit({ ...this.note });
       if (data.code === "0") {
         Toast({

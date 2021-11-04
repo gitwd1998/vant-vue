@@ -26,10 +26,18 @@
       :rules="[{ required: true, message: '请填写内容' }]"
     ></van-filed>
     <div class="van-cell">
-      <van-button round block type="info" native-type="submit">提交</van-button>
+      <van-button
+        :disabled="disabledBtn"
+        round
+        block
+        type="info"
+        native-type="submit"
+        >提交</van-button
+      >
     </div>
     <div class="van-cell">
       <van-button
+        :disabled="disabledBtn"
         round
         block
         type="warning"
@@ -40,6 +48,7 @@
     </div>
     <div class="van-cell">
       <van-button
+        :disabled="disabledBtn"
         round
         block
         type="danger"
@@ -62,6 +71,7 @@ export default {
   data() {
     return {
       note: { title: "", content: "" },
+      disabledBtn: false,
     };
   },
   methods: {
@@ -72,6 +82,7 @@ export default {
       }
     },
     async onSubmit(form) {
+      this.disabledBtn = true;
       let data = await add({ ...form, time: new Date().getTime() });
       if (data.code === "0") {
         Toast.success({
@@ -79,7 +90,7 @@ export default {
           duration: 1000,
         });
         setTimeout(() => {
-          this.$router.replace("/notes/lists");
+          this.$router.go(-1);
         }, 1000);
       }
     },

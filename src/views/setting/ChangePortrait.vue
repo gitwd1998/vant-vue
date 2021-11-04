@@ -24,7 +24,7 @@ export default {
           duration: 1000,
         });
         setTimeout(() => {
-          this.$router.replace({ path: "/setting" });
+          this.$router.go(-1);
         }, 1000);
       } else {
         Toast("修改失败");

@@ -81,7 +81,7 @@ export default {
         .then(async () => {
           const data = await deleteItem({ id: this.id });
           if (data.code === "0") {
-            this.$router.replace({ path: "/notes/lists" });
+            this.$router.go(-1);
             Toast({
               message: "data.msg",
               duration: 1000,
