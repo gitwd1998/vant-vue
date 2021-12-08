@@ -1,48 +1,50 @@
 <template>
-  <van-form colon :submit-on-enter="false">
-    <van-filed label="时间" v-model="note.time" readonly></van-filed>
-    <van-filed label="标题" v-model="note.title" readonly></van-filed>
-    <van-filed
-      readonly
-      label="内容"
-      v-model="note.content"
-      rows="5"
-      autosize
-      type="textarea"
-      maxlength="100"
-      show-word-limit
-    ></van-filed>
-    <div class="van-cell">
-      <van-button
-        round
-        block
-        type="info"
-        native-type="button"
-        @click="$router.push({ path: '/notes/edit', query: { id } })"
-        >编 辑</van-button
-      >
-    </div>
-    <div class="van-cell">
-      <van-button
-        round
-        block
-        type="warning"
-        native-type="button"
-        @click="$router.go(-1)"
-        >关闭</van-button
-      >
-    </div>
-    <div class="van-cell">
-      <van-button
-        round
-        block
-        type="danger"
-        native-type="button"
-        @click="handleDelete"
-        >删 除</van-button
-      >
-    </div>
-  </van-form>
+  <div class="main-content">
+    <van-form colon :submit-on-enter="false">
+      <van-filed label="时间" v-model="note.time" readonly></van-filed>
+      <van-filed label="标题" v-model="note.title" readonly></van-filed>
+      <van-filed
+        readonly
+        label="内容"
+        v-model="note.content"
+        rows="5"
+        autosize
+        type="textarea"
+        maxlength="100"
+        show-word-limit
+      ></van-filed>
+      <div class="van-cell">
+        <van-button
+          round
+          block
+          type="info"
+          native-type="button"
+          @click="$router.push({ path: '/notes/edit', query: { id } })"
+          >编 辑</van-button
+        >
+      </div>
+      <div class="van-cell">
+        <van-button
+          round
+          block
+          type="warning"
+          native-type="button"
+          @click="$router.go(-1)"
+          >关闭</van-button
+        >
+      </div>
+      <div class="van-cell">
+        <van-button
+          round
+          block
+          type="danger"
+          native-type="button"
+          @click="handleDelete"
+          >删 除</van-button
+        >
+      </div>
+    </van-form>
+  </div>
 </template>
 <script>
 import { Button, Field, Dialog, Toast, Form } from "vant";

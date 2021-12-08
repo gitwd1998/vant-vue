@@ -1,7 +1,9 @@
 <template>
-  <van-uploader :after-read="afterRead">
-    <van-button icon="plus" type="primary">上传文件</van-button>
-  </van-uploader>
+  <div class="main-content">
+    <van-uploader :after-read="afterRead">
+      <van-button icon="plus" type="primary">上传文件</van-button>
+    </van-uploader>
+  </div>
 </template>
 <script>
 import { uploadHead } from "@/api";

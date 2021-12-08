@@ -6,6 +6,7 @@
           key="edit"
           size="small"
           :icon="isSelect ? 'close' : 'edit'"
+          v-show="noteList.length"
           @click="isSelect = !isSelect"
         />
         <van-button
@@ -18,14 +19,14 @@
           key="select"
           size="small"
           :icon="isAllSelected ? 'certificate' : 'circle'"
-          v-if="isSelect"
+          v-show="isSelect && noteList.length"
           @click="selectAll"
         />
         <van-button
           key="delete"
           size="small"
           icon="delete-o"
-          v-if="isSelect && selectedArr.length"
+          v-show="isSelect && selectedArr.length"
           @click="batchDelete"
         />
         <van-button
@@ -170,6 +171,7 @@ export default {
           const data = await batchDelete({ ids: this.selectedArr });
           if (data.code === "0") {
             Toast(data.msg);
+            this.selectedArr = [];
             this.onInit();
           } else {
             Toast("删除失败");

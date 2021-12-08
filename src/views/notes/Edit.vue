@@ -1,63 +1,65 @@
 <template>
-  <van-form
-    ref="form"
-    colon
-    :submit-on-enter="false"
-    @submit="onSubmit"
-    @failed="onFailed"
-  >
-    <van-filed
-      v-model="note.title"
-      name="title"
-      label="标题"
-      placeholder="请填写标题"
-      :rules="[{ required: true, message: '请填写标题' }]"
-    ></van-filed>
-    <van-filed
-      v-model="note.content"
-      name="content"
-      label="内容"
-      rows="5"
-      autosize
-      type="textarea"
-      maxlength="100"
-      show-word-limit
-      placeholder="请填写内容"
-      :rules="[{ required: true, message: '请填写内容' }]"
-    ></van-filed>
-    <div class="van-cell">
-      <van-button
-        :disabled="disabledBtn"
-        round
-        block
-        type="info"
-        native-type="submit"
-        >提交</van-button
-      >
-    </div>
-    <div class="van-cell">
-      <van-button
-        :disabled="disabledBtn"
-        round
-        block
-        type="warning"
-        native-type="button"
-        @click="onReset"
-        >重置</van-button
-      >
-    </div>
-    <div class="van-cell">
-      <van-button
-        :disabled="disabledBtn"
-        round
-        block
-        type="danger"
-        native-type="button"
-        @click="$router.go(-1)"
-        >取消</van-button
-      >
-    </div>
-  </van-form>
+  <div class="main-content">
+    <van-form
+      ref="form"
+      colon
+      :submit-on-enter="false"
+      @submit="onSubmit"
+      @failed="onFailed"
+    >
+      <van-filed
+        v-model="note.title"
+        name="title"
+        label="标题"
+        placeholder="请填写标题"
+        :rules="[{ required: true, message: '请填写标题' }]"
+      ></van-filed>
+      <van-filed
+        v-model="note.content"
+        name="content"
+        label="内容"
+        rows="5"
+        autosize
+        type="textarea"
+        maxlength="100"
+        show-word-limit
+        placeholder="请填写内容"
+        :rules="[{ required: true, message: '请填写内容' }]"
+      ></van-filed>
+      <div class="van-cell">
+        <van-button
+          :disabled="disabledBtn"
+          round
+          block
+          type="info"
+          native-type="submit"
+          >提交</van-button
+        >
+      </div>
+      <div class="van-cell">
+        <van-button
+          :disabled="disabledBtn"
+          round
+          block
+          type="warning"
+          native-type="button"
+          @click="onReset"
+          >重置</van-button
+        >
+      </div>
+      <div class="van-cell">
+        <van-button
+          :disabled="disabledBtn"
+          round
+          block
+          type="danger"
+          native-type="button"
+          @click="$router.go(-1)"
+          >取消</van-button
+        >
+      </div>
+    </van-form>
+  </div>
 </template>
 <script>
 import { Button, Field, Form, Toast } from "vant";
