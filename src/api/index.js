@@ -139,3 +139,18 @@ export function uploadHead(data) {
         data,
     })
 }
+
+/**
+ * 上传文件
+ * @param {*} data 
+ * @returns 上传文件
+ */
+export function upload(data, params) {
+    return request({
+        url: '/upload',
+        method: 'post',
+        headers: { 'Content-Type': 'multipart/form-data' },
+        data,
+        params
+    })
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="layout login">
     <div class="title">登 录</div>
     <van-form
       ref="form"
@@ -10,6 +10,7 @@
       @failed="onFailed"
     >
       <van-field
+        autocomplete="off"
         v-model="form.username"
         name="username"
         label="用户名"
@@ -17,6 +18,7 @@
         :rules="[{ pattern: rules.checkUsername, message: '请输入用户名' }]"
       />
       <van-field
+        autocomplete="off"
         v-model="form.password"
         name="password"
         label="密码"
@@ -24,6 +26,7 @@
         :rules="[{ pattern: rules.checkPassword, message: '请输入密码' }]"
       />
       <van-field
+        autocomplete="off"
         v-model="form.captchatext"
         name="captchatext"
         label="验证码"
@@ -154,6 +157,11 @@ export default {
 .login {
   padding: 40px 10px;
   text-align: center;
+  background: url("../assets/img/bg.jpg") center center no-repeat;
+  background-size: 100% 100%;
+  div {
+    background: unset;
+  }
   .title {
     font: 30px/3 "";
     color: #ccc;

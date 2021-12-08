@@ -88,8 +88,6 @@ export default {
     bottom: 0;
     position: absolute;
     box-shadow: #ccc 0 0 30px;
-    background: #fff;
-    overflow: hidden;
     .main {
       background: url("./assets/img/logo.png") center 10px no-repeat;
       background-size: 20%;

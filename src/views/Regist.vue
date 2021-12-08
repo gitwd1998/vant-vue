@@ -1,5 +1,5 @@
 <template>
-  <div class="regist">
+  <div class="layout regist">
     <div class="title">注 册</div>
     <van-form
       ref="form"
@@ -10,6 +10,7 @@
       @failed="onFailed"
     >
       <van-field
+        autocomplete="off"
         v-model.trim="form.username"
         name="username"
         label="用户名"
@@ -17,6 +18,7 @@
         :rules="[{ pattern: rules.checkUsername, message: '请输入合法用户名' }]"
       />
       <van-field
+        autocomplete="off"
         v-model="form.phone"
         name="phonenumber"
         label="手机号"
@@ -24,6 +26,7 @@
         :rules="[{ pattern: rules.checkPhone, message: '请输入合法手机号' }]"
       />
       <van-field
+        autocomplete="off"
         v-model="form.password"
         name="password"
         label="密码"
@@ -124,6 +127,11 @@ export default {
 .regist {
   padding: 40px 10px;
   text-align: center;
+  background: url("../assets/img/bg.jpg") center center no-repeat;
+  background-size: 100% 100%;
+  div {
+    background: unset;
+  }
   .title {
     font: 30px/3 "";
     color: #ccc;
