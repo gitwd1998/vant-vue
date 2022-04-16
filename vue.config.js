@@ -29,7 +29,6 @@ module.exports = {
     // 默认情况下 babel-loader 会忽略所有 node_modules 中的文件。如果你想要通过 Babel 显式转译一个依赖，可以在这个选项中列出来。
     transpileDependencies: [],//Type: Array, Default: []
 
-    // 如果你不需要生产环境的 source map，可以将其设置为 false 以加速生产环境构建。
     productionSourceMap: true,//Type: Boolean, Default: true
 
     // 在 multi-page（多页）模式下构建应用。每个“page”应该有一个对应的 JavaScript 入口文件。
@@ -41,30 +40,19 @@ module.exports = {
     // 在生成的 HTML 中的 <link rel="stylesheet"> 和 <script> 标签上启用 Subresource Integrity (SRI)。如果你构建后的文件是部署在 CDN 上的，启用该选项可以提供额外的安全性。
     integrity: false,//Type: Boolean, default: false
 
-    // Webpack相关配置 Type: Object||Function
-    // 如果这个值是一个对象，则会通过 webpack-merge 合并到最终的配置中。
-    // 如果这个值是一个函数，则会接收被解析的配置作为参数。该函数及可以修改配置并不返回任何东西，也可以返回一个被克隆或合并过的配置版本。
-    // configureWebpack: {
-    //     output: {
-    //         libraryExport: 'default'
-    //     }
-    // },
-    configureWebpack: config => {
-        // 移动端调试控制台插件
-        const debug = process.env.NODE_ENV !== 'production'
-        let pluginsDev = [
+    configureWebpack: {
+        output: {
+            libraryExport: 'default'
+        },
+        plugins: [
             new vConsolePlugin({
                 filter: [],
-                enable: debug
+                enable: process.env.NODE_ENV !== 'production'
             })
         ]
-        config.plugins = [...config.plugins, ...pluginsDev]
     },
 
-    // Webpack相关配置 Type: Function
-    chainWebpack: config => {
-        // 会接收一个基于 webpack-chain 的 ChainableConfig 实例。允许对内部的 webpack 配置进行更细粒度的修改。
-    },
+    chainWebpack: {},
 
     // css相关配置
     css: {
