@@ -2,6 +2,7 @@ const url = require('url');
 const queryString = require('querystring');
 const path = require('path');
 const vConsolePlugin = require('vconsole-webpack-plugin')
+const TerserPlugin = require("terser-webpack-plugin");
 
 process.env.VUE_APP_VERSION = require('./package.json').version
 module.exports = {
@@ -77,7 +78,22 @@ module.exports = {
             new vConsolePlugin({
                 filter: [],
                 enable: process.env.NODE_ENV !== 'production'
-            })
+            }),
+            new TerserPlugin({
+                cache: true,
+                sourceMap: false,
+                parallel: true,
+                terserOptions: {
+                    ecma: undefined,
+                    warnings: false,
+                    parse: {},
+                    compress: {
+                        drop_console: true,
+                        drop_debugger: false,
+                        pure_funcs: ['console.log'], // 移除console
+                    },
+                }
+            }),
         ]
     },
 

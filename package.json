@@ -28,6 +28,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "terser-webpack-plugin": "^4.2.3",
     "vconsole-webpack-plugin": "^1.5.2",
     "vue-template-compiler": "^2.6.11"
   },
