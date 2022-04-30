@@ -14,7 +14,7 @@ module.exports = {
     // Type: String
     // Default: "dist"
     // 构建输出目录 npm run build，当运行 vue-cli-service build 时生成的生产环境构建文件的目录。注意目标目录在构建之前会被清除 (构建时传入 --no-clean 可关闭该行为 “vue-cli-service build --no-clean”)。
-    outputDir: 'dist',
+    outputDir: `dist/${process.env.VUE_APP_VERSION}`,
 
     // Type: String
     // Default: ""
